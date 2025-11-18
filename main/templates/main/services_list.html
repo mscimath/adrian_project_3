@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <title>List posts</title>
+</head>
+<body>
+    <h1>Posty:</h1>
+    <ul>
+        {% for service in services %}
+            <li>{{ service.title }} ({{ service.created_at }})</li>
+        {% empty %}
+            <li>No services.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

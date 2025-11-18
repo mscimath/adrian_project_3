@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+     <!-- Meta information for the page -->
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Sandra Szczepaniak - Beauty Expert & Eyelash Trainer</title>
+     <meta name="description" content="Sandra Szczepaniak offers professional eyelash styling, makeup services, and expert training for beauty professionals. Passionate about aesthetics and beauty education.">
+     <meta name="keywords" content="Sandra Szczepaniak, beauty salon, eyelash stylist, lash extensions, lash lifting, lash lamination, makeup artist, beauty trainer, eyelash trainer, beauty education, aesthetic services, beauty expert, linguist, lash courses, beauty industry, makeup services, cosmetic training">
+     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+{% include "partials/header.html" %}
+
+  <form method="post" action="{% url 'reservation' %}">
+    {% csrf_token %}
+
+    <!-- Lista usług -->
+    <label for="service">Wybierz usługę:</label>
+    <select name="service" id="service" required>
+        <option value="">-- wybierz --</option>
+        {% for service in services %}
+            <option value="{{ service.id }}">{{ service.title }} ({{ service.time }} h)</option>
+        {% empty %}
+            <option disabled>Brak usług</option>
+        {% endfor %}
+    </select>
+    <br><br>
+
+    <!-- Data -->
+    <label for="date">Data:</label>
+    <input type="date" name="date" id="date" value="{{ selected_date }}" required>
+    <br><br>
+
+    <!-- Godzina start -->
+    <label for="start_time">Godzina startu:</label>
+    <!--<input type="time" name="start_time" id="start_time" step="3600" required> -->
+    <select id="hour" name="hour" required>
+    <option value="">-- wybierz --</option>
+    {% for h in hours %}
+        <option value="{{ h }}" {% if h == selected_hour %}selected{% endif %}>
+            {{ h }}
+        </option>
+    {% endfor %}
+    </select>
+    <br><br>
+
+    <!-- Submit -->
+    <button type="submit" class="book-btn ">Zarezerwuj</button>
+    </form>
+
+<!-- Footer section containing copyright and external contact links -->
+{% include "partials/footer.html" %}
+
+<script src="{% static 'main/js/column.js' %}"></script>
+<script src="{% static 'main/js/menu.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+     <!-- Meta information for the page -->
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Sandra Szczepaniak - Beauty Expert & Eyelash Trainer</title>
+     <meta name="description" content="Sandra Szczepaniak offers professional eyelash styling, makeup services, and expert training for beauty professionals. Passionate about aesthetics and beauty education.">
+     <meta name="keywords" content="Sandra Szczepaniak, beauty salon, eyelash stylist, lash extensions, lash lifting, lash lamination, makeup artist, beauty trainer, eyelash trainer, beauty education, aesthetic services, beauty expert, linguist, lash courses, beauty industry, makeup services, cosmetic training">
+     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Navbar for website navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+        <div class="space-between" style="padding: 0;">
+          
+            <!-- Company logo displayed on the left side -->
+            <div class="menu_center">
+                <a class="navbar-brand me-3 logo" href="index.html" style="padding: 0; margin-right: 10px;">
+                    <img src="../static/main/img/logo.png" alt="Construction company logo">
+                </a>
+                <span class="navbar-text interactive-text" style="padding: 0; font-family: 'Lora', 'Helvetica Neue', Helvetica, sans-serif;">
+                    Beauty Salon
+                </span>                           
+            </div>
+          <!--<div class= "button-container">
+            <button class="book-now"> Book Now
+            </button>
+
+          </div>-->
+            
+        </div>
+        <!-- Hamburger button for mobile devices -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navigation menu with links to other pages -->
+        <div class="collapse navbar-collapse navbarMenu" id="navbarMenu">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" id="welcome" href="index.html">Welcome</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about_me.html">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'services' %}">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'services' %}">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="price_list.html">Price List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+    </header>
+    <p class="navbar-placeholder"></p>
+    <section id="about_me" class="section">
+        
+        <div class="about_left">
+            <img class="image_panel" src="{% static '../../../../static/main/img/sandra_salon.jpg' %}" alt="This is me">
+        </div>
+
+        <div class="about_right service">
+            <h1>Sandra Szczepaniak</h1>
+                <p><strong>High Wycombe, Buckinghamshire / United Kingdom</strong></p>
+
+                <p>Hi, my future students!</p>
+
+                <p>
+                    I come from Poland and I am a mother of 3. My eyelash career began in January 2016.
+                    I believe that to be the best, you have to learn from the best. Only this way and a lot of practice is a guarantee of success!
+                </p>
+
+                <p>
+                    That’s why I have always chosen top lash and brows stylists and instructors from all over the world to learn from them.
+                    During this time, I have earned around 40 certifications, learning different methods, different techniques and improving them,
+                    to now share it all with you.
+                </p>
+
+                <div class="container">
+                    <div class="split one">
+                      <div>
+                        <h1 class="column_name">Eyelash Styling</h1>
+                        <p class="column_text"> ipsum dolor, sit amet consectetur adipisicing elit. 
+                        Tempore aut quisquam rerum, possimus enim sint excepturi id atque quis, 
+                        soluta impedit exercitationem odit tenetur perferendis quo doloribus eius temporibus sit!</p>
+                        <a href="#" class="button column_button">Read more</a>
+                      </div>
+                    </div>
+                    <div class="split two">
+                      <div>
+                        <h1 class="column_name">Eyelash Training</h1>
+                        <p class="column_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Tempore aut quisquam rerum, possimus enim sint excepturi id atque quis, 
+                            soluta impedit exercitationem odit tenetur perferendis quo doloribus eius temporibus sit!</p>
+                        <a href="#" class="button column_button">Read more</a>
+                      </div>
+                    </div>
+                    <div class="split three">
+                      <div>
+                        <h1 class="column_name">Permanent Makeup</h1>
+                        <p class="column_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Tempore aut quisquam rerum, possimus enim sint excepturi id atque quis, 
+                            soluta impedit exercitationem odit tenetur perferendis quo doloribus eius temporibus sit!</p>
+                        <a href="#" class="button column_button">Read more</a>
+                      </div>
+                    </div>
+                    <div class="split four">
+                      <div>
+                        <h1 class="column_name">Aesthetic</h1>
+                        <p class="column_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Tempore aut quisquam rerum, possimus enim sint excepturi id atque quis, 
+                            soluta impedit exercitationem odit tenetur perferendis quo doloribus eius temporibus sit!</p>
+                        <a href="#" class="button column_button">Read more</a>
+                      </div>
+                    </div>
+                  </div>
+
+    </section>
+
+    <section>
+        
+    </section>
+    <ul>
+        {% for service in services %}
+            <li>{{ service.title }} ({{ service.created_at }})</li>
+        {% empty %}
+            <li>No services.</li>
+        {% endfor %}
+    </ul>
+    <script src="{% static 'main/js/column.js' %}"></script>
+</body>
+</html>

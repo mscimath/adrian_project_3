@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+     <!-- Meta information for the page -->
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Sandra Szczepaniak - Beauty Expert & Eyelash Trainer</title>
+     <meta name="description" content="Sandra Szczepaniak offers professional eyelash styling, makeup services, and expert training for beauty professionals. Passionate about aesthetics and beauty education.">
+     <meta name="keywords" content="Sandra Szczepaniak, beauty salon, eyelash stylist, lash extensions, lash lifting, lash lamination, makeup artist, beauty trainer, eyelash trainer, beauty education, aesthetic services, beauty expert, linguist, lash courses, beauty industry, makeup services, cosmetic training">
+     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+     <link rel="stylesheet" href="{% static 'main/css/login.css' %}">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+{% include "partials/header.html" %}
+
+  <!-- MAIN SERVICES SECTION -->
+  <div class="main-section-wrapper">
+
+  <section class="main-section">
+    {% if messages %}
+    {% for message in messages %}
+        <p style="color:red">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+<h2>Login</h2>
+<form method="post" style="margin-bottom:30px; max-width:300px;">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="login">
+    <label style="display:block; margin-top:10px; font-weight:bold;">Username:</label>
+    <input type="text" name="username" required style="width:100%; padding:5px; margin-top:5px;"><br>
+    <label style="display:block; margin-top:10px; font-weight:bold;">Password:</label>
+    <input type="password" name="password" required style="width:100%; padding:5px; margin-top:5px;"><br>
+    <button type="submit" style="margin-top:15px; padding:8px 12px;">Login</button>
+</form>
+
+<h2>Register</h2>
+<form method="post" style="margin-bottom:30px; max-width:300px;">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="register">
+    <label style="display:block; margin-top:10px; font-weight:bold;">Username:</label>
+    <input type="text" name="username" required style="width:100%; padding:5px; margin-top:5px;"><br>
+    <label style="display:block; margin-top:10px; font-weight:bold;">Email:</label>
+    <input type="email" name="email" required style="width:100%; padding:5px; margin-top:5px;"><br>
+    <label style="display:block; margin-top:10px; font-weight:bold;">Password:</label>
+    <input type="password" name="password1" required style="width:100%; padding:5px; margin-top:5px;"><br>
+    <label style="display:block; margin-top:10px; font-weight:bold;">Confirm Password:</label>
+    <input type="password" name="password2" required style="width:100%; padding:5px; margin-top:5px;"><br>
+    <button type="submit" style="margin-top:15px; padding:8px 12px;">Register</button>
+</form>
+  
+  </section>
+</div>
+
+<!-- Footer section containing copyright and external contact links -->
+{% include "partials/footer.html" %}
+
+<script src="{% static 'main/js/column.js' %}"></script>
+<script src="{% static 'main/js/menu.js' %}"></script>
+</body>
+</html>

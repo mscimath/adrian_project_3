@@ -1,0 +1,55 @@
+<!-- templates/partials/footer.html -->
+{% load static %}
+
+<div id="scroll-button" class="button-container">
+
+    <div class="hamburger cross book-btn3" onclick="scrollToTop()">
+        <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" focusable="false">
+            <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+          </svg>
+    </div>
+  
+  </div>
+<!-- Footer section containing copyright and external contact links -->
+<footer id="footer" class="bg-dark text-light py-3">
+    <div class="footer-container d-flex justify-content-between align-items-center h-100">
+        
+        <!-- Dynamic year using JavaScript to keep content up-to-date -->
+        <p id="footer-text" class="mobile-hide mb-0">&copy; <span id="year"></span> VELORIA LONDON. All rights reserved.</p>
+
+       <!-- Social media and contact icons for accessibility and client interaction -->
+        <div class="footer-icons text-end">
+         
+            <a style= "color:transparent;"class="hidden-link" target="_blank" href="https://www.facebook.com/sandra.szczepaniak.3">
+                <img class="footer-icon mx-2" src="{% static 'main/img/social.png' %}" alt="This is link to Facebook">
+            </a>
+
+            <a style= "color:transparent;" class="hidden-link" target="_blank" href="https://www.instagram.com/sandraszczepaniak4/">
+              <img class="footer-icon mx-2" src="{% static 'main/img/instagram.png' %}" alt="This is our link to Instagram">
+            </a>
+
+            <a style= "color:transparent;" class="hidden-link" target="_blank" href="tel:+447539488172">
+            <img class="footer-icon mx-2" src="{% static 'main/img/phone.png' %}" alt="This is our phone number">
+            </a>
+
+            <a style= "color:transparent;" class="hidden-link" target="_blank" href="mailto:sandraszczepaniak4@gmail.com">
+                <img class="footer-icon mx-2" src="{% static 'main/img/message.png' %}" alt="This is link to Email">
+            </a>
+        
+        </div>
+         <!-- Floating Chat Icon -->
+<div id="chat-icon">
+  <img class="chat_image" src="{% static 'main/img/chatbot.png' %}" alt="This is our link to chatbot">
+</div>
+ 
+<!-- Floating Chat Window -->
+<div id="chat-window">
+<div id="chat-messages"></div>
+<div id="chat-input">
+<input type="text" id="message" placeholder="Type a message...">
+<button id="send-btn">Send</button>
+</div>
+</div>
+    </div>
+   
+</footer>

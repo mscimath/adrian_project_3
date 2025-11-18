@@ -1,0 +1,130 @@
+<!-- templates/partials/header.html -->
+{% load static %}
+<header class="top-nav">
+  
+    <div class="nav-top">
+
+      <video autoplay muted loop playsinline id="background-video">
+        <source src="{% static 'main/video/pernament2.mp4'%}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+    <div class="nav-top-elements">
+      <div>
+        
+      
+      <div class="mobile-hide hamburger" id="hamburger" onmouseover="openMENU()" >
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+
+    </div>
+
+    <!--<div class="rotating-logo-container">
+      <img src="{% static 'main/img/logo_part1.png' %}" alt="Rotating Ring" class="rotating-ring">
+      <img src="{% static 'main/img/logo_part2.png' %}" alt="Static Center" class="static-center">
+    </div>!-->
+
+    <div class="logo-container" style="text-align: center;">
+      <img src="{% static 'main/img/veloria.png' %}" alt="Logo" width="250" style="height: auto;">
+    </div>
+
+
+    <div class="desktop-hide hamburger" id="hamburger" onmouseover="openMENU()" >
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+    <!--<div class="login_logout2">
+      <div class="login_logout mobile-hide">
+        {% if not user.is_authenticated %}
+      <button class="image-login mobile-hide" data-url="{% url 'login' %}" onclick="window.location.href=this.dataset.url;">
+        <img src="{% static 'main/img/login.png' %}" alt="Login">
+      </button>
+        {% endif %}
+
+      {% if user.is_authenticated %}
+      <form class="mobile-hide" method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit" class="image-login mobile-hide"  data-url="{% url 'index' %}" onclick="window.location.href=this.dataset.url;">
+            <img src="{% static 'main/img/log_out.png' %}" alt="Log out" width="50" height="50">
+          </button>
+      </form>!-->
+
+      
+      <!-- <button type="submit" class="image-logout">
+        <img src="{% static 'main/img/log_out.png' %}" alt="Log out" width="50" height="50">
+    </button>
+  --> 
+    <!--{% endif %}
+
+      </div>!-->
+    <div class="mobile-hide" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <img style="transform: translateY(+50%);" class="overlay-image2 mobile-hide fade image" src="{% static 'main/img/book_now.png' %}" height="120px" alt="BOOK NOW" onclick="window.location.href='{% url 'calendar' %}';">
+        <img style="transform: translateY(-50%);" class="overlay-image2 mobile-hide" src="{% static 'main/img/book_now2.png' %}" alt="BOOK NOW" onclick="window.location.href='{% url 'calendar' %}';">
+    </div>
+
+    </div>
+
+  
+    <div class="marquee">
+      <span style="font-weight: bold;">
+        ••• New client? Use code NEW10 to receive 10% off your first visit! •••
+      </span>
+      <span style="font-weight: bold;">
+        ••• Existing client? Refer a friend with the code FRIEND15 to both receive 15% off your next treatment! •••
+      </span>
+    </div>
+    </div>
+
+    <nav class="nav-bottom" id="nav-bottom" onmouseleave="closeMENU()">
+     
+      <img src="{% static 'main/img/veloria.png' %}" alt="Logo" height="200px" style="display: block; margin: 0 auto;" />
+      
+     
+      <a class="menu left first text-with-ellipse-line" href="{% url 'index' %}">Welcome</a>
+
+      <a class="menu left text-with-ellipse-line" href="#">Services</a>
+
+      <a class="menu left text-with-ellipse-line" href="{% url 'reviews_page' %}">Opinions</a>
+
+      <a class="menu left text-with-ellipse-line" href="#">Blog</a>
+
+      <a class="menu left text-with-ellipse-line" href="#">Career</a>
+
+      <a class="menu left text-with-ellipse-line" href="#">Contact</a>
+
+      <a class="menu left text-with-ellipse-line" href="{% url 'calendar' %}">Book Now</a>
+      {% if not user.is_authenticated %}
+      <a class="menu left text-with-ellipse-line" href="{% url 'login' %}">Login</a>
+      {% endif %}
+
+      {% if user.is_authenticated %}
+      
+      <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button style="background-color: transparent; border: none;" type="submit" class="menu left text-with-ellipse-line" data-url="{% url 'index' %}" onclick="window.location.href=this.dataset.url;">
+          Logout
+        </button>
+    </form>
+
+      {% endif %}
+      <div>
+        <br>
+      </div>
+
+    </nav>
+
+    <div class="close-container">
+
+      <div id="close-menu" class="hamburger cross book-btn4 desktop-hide mobile-hide" onclick="closeMENU()">
+          <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" focusable="false">
+            <path d="M4 6l6 6l-6 6l2 2l6 -6l6 6l2 -2l-6 -6l6 -6l-2 -2l-6 6l-6 -6z"/>
+            </svg>
+      </div>
+    
+    </div>
+
+  </header>
