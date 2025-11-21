@@ -1,0 +1,119 @@
+/* career.css */
+.career-container {
+    background-color: #fdfcf9; /* jasne tło */
+    padding: 2rem;
+    min-height: 80vh;
+    color: #270049;
+    font-family: 'Helvetica Neue', sans-serif;
+    overflow-y: auto;
+}
+
+.career-container h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #6a4b7c;
+}
+
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 160px;
+}
+
+.career-card {
+    background-color: #6a4b7c;
+    color: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.career-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.career-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.career-card a.book-btn {
+    background-color: #cfa15a;
+    color: #6a4b7c;
+    border: 2px solid #6a4b7c;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.career-card a.book-btn:hover {
+    background-color: #6a4b7c;
+    color: #ffffff;
+    border-color: #cfa15a;
+    box-shadow: 0 0 15px 4px #cfa15aaa;
+    transform: scale(1.05);
+}
+
+.holographic-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        120deg,
+        transparent 40%,
+        #6a4b7c,
+        transparent 60%
+    );
+    transform: rotate(0deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.holographic-card:hover::before {
+    opacity: 1;
+    transform: rotate(45deg) translateY(100%);
+}
+
+.holographic-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px #6a4b7c;
+}
+
+@media (max-width: 900px) {
+    .career-container {
+        padding: 1rem;
+    }
+
+    .career-card {
+        padding: 1rem;
+    }
+
+    .career-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .career-card p {
+        font-size: 0.95rem;
+    }
+}

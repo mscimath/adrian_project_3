@@ -1,1 +1,53 @@
- pjhkjdsdxxc 
+/* contact.css */
+
+.contact-container {
+    max-width: 900px;
+    margin: 120px auto 50px auto; /* odstęp od headera */
+    padding: 20px;
+    background-color: rgba(106, 75, 124, 0.85); /* fioletowe półprzezroczyste tło */
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    color: #fff;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #dd7cf0;
+    text-shadow: 1px 1px 3px #270049;
+}
+
+.contact-content p {
+    font-size: 1.4rem;
+    margin: 15px 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-content a {
+    color: #ffc107; /* złoty link */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact-content a:hover {
+    color: #ffffff;
+    text-shadow: 2px 2px 6px #270049;
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .contact-container {
+        margin: 100px 20px 50px 20px;
+        padding: 15px;
+    }
+
+    .contact-title {
+        font-size: 2rem;
+    }
+
+    .contact-content p {
+        font-size: 1.2rem;
+    }
+}
