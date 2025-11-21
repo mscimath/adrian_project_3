@@ -14,98 +14,12 @@
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
+<body>
 {% include "partials/header.html" %}
 
 <h2>All Opinions</h2>
 {% for review in reviews %}
-    <p><strong>{{ review.name }}</strong> ({{ review.rating }}⭐) - {{ review.created_at|date:"Y-m-d H:i" }}</p>
-    <p>{{ review.content }}</p>
-    <hr>
-{% empty %}
-    <p>Brak opinii.</p>
-{% endfor %}
 
-
-<form method="post" class="review-form">
-  {% csrf_token %}
-  <p>
-    {{ form.name.label_tag }}<br>
-    {{ form.name}}
-  </p>
-  <p>
-    {{ form.email.label_tag }}<br>
-    {{ form.email}}
-  </p>
-  <p>
-    {{ form.content.label_tag }}<br>
-    {{ form.content}}
-  </p>
-  
-  <p>Rating:</p>
-  <div class="star-rating">
-    <span data-value="1">&#9733;</span>
-    <span data-value="2">&#9733;</span>
-    <span data-value="3">&#9733;</span>
-    <span data-value="4">&#9733;</span>
-    <span data-value="5">&#9733;</span>
-  </div>
-  <input type="hidden" name="rating" id="id_rating" value="5">
-
-  <button type="submit" class="book-btn">Add review</button>
-</form>
-
-<ul>
-  <li></li>
-  <li></li>
-</ul>
-
-<style>
-.review-form {
-    width: 33%;          /* 1/3 szerokości strony */
-    margin: 0 auto;      /* wycentrowanie */
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: left;
-}
-
-.review-form input, .review-form textarea {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 14px;
-}
-
-.btn-submit {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    align-self: center;   /* przycisk na środku */
-}
-
-.btn-submit:hover { background-color: #45a049; }
-
-.star-rating {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-.star-rating span {
-    cursor: pointer;
-    color: #ccc;
-}
-.star-rating span.selected,
-.star-rating span:hover,
-.star-rating span:hover ~ span {
-    color: gold;
-}
-</style>
 
 <script>
 // Interaktywny wybór gwiazdek
