@@ -86,15 +86,15 @@
      
       <a class="menu left first text-with-ellipse-line" href="{% url 'index' %}">Welcome</a>
 
-      <a class="menu left text-with-ellipse-line" href="#">Services</a>
+      <a class="menu left text-with-ellipse-line" href="{% url 'services' %}">Services</a>
 
       <a class="menu left text-with-ellipse-line" href="{% url 'reviews_page' %}">Opinions</a>
 
-      <a class="menu left text-with-ellipse-line" href="#">Blog</a>
+      <a class="menu left text-with-ellipse-line" href="{% url 'blog' %}">Blog</a>
 
-      <a class="menu left text-with-ellipse-line" href="#">Career</a>
+      <a class="menu left text-with-ellipse-line" href="{% url 'career' %}">Career</a>
 
-      <a class="menu left text-with-ellipse-line" href="#">Contact</a>
+      <a class="menu left text-with-ellipse-line" href="{% url 'contact' %}">Contact</a>
 
       <a class="menu left text-with-ellipse-line" href="{% url 'calendar' %}">Book Now</a>
       {% if not user.is_authenticated %}

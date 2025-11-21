@@ -265,3 +265,12 @@ def reviews_page(request):
 
     reviews = Review.objects.all().order_by('-created_at')
     return render(request, 'main/reviews.html', {'reviews': reviews, 'form': form})
+
+def blog(request):
+    return render(request, 'main/blog.html')
+
+def career(request):
+    return render(request, 'main/career.html')
+
+def contact(request):
+    return render(request, 'main/contact.html')
